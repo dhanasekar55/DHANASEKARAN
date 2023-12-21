@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            border: 3px solid #f1f1f1;
+            padding: 25px;
+            background-color: aqua;
+        }
+        .imgcontainer{
+            text-align: center;
+            margin: 24px;
+        }
+        .div1{
+            display: flex;
+            text-align: left;
+            justify-content: center;
+            align-items: center;
+        }
+        input[type=text]{
+            width: 80%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+
+        }
+        input[type=password]{
+            width: 80%;
+            padding: 12px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+
+        }
+        button[type=submit]{
+            text-align:center;
+            padding: 8px ;
+            float:right;
+
+        } 
+    </style>
+</head>
+<body>
+   <h1 style="color:black;text-align: center;">Login</h1>
+   <div class="imgcontainer"><img src="avathar.png" alt="image"></div>
+   <div class="div1">
+      <form>
+        <br><br>
+        <label>Name</label>
+        <input type="text" id="fname" placeholder="name" width="200">
+        <br><br>
+        <label> Password</label>
+        <input type="password" id="password" placeholder="password" width="200">
+        <br><br>
+        <label >
+            <input type="checkbox" checked="checked" name="remember">Remember me</input>
+        </label>
+        
+
+        <button type="submit"> Login</button>
+      </form>
+    
+   </div>
+
+    
+</body> 
+</html>

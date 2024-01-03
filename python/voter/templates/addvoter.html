@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Flask CRUD</title>
+		<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+	</head>
+	<body>
+	<h1>Add voter</h1>
+		<form action='' method='post'>
+			<label>ID:</label>
+			<input type="text" name="ID" required>
+			<label>name:</label>
+			<input type="text" name="name" required><br><br>
+			<label>voter:</label><br>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">html</label><br>
+            <input type="radio" id="css" name="fav_language" value="CSS">
+            <label for="css">css</label><br>
+            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+            <label for="javascript">JavaScript</label><br><br>
+            <input type="submit" value="Submit"> 
+		</form>
+	</body>
+</html>

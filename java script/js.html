@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hlo">hello</h1>
+    Num1 :<input type="number" id="input1">
+    Num2 :<input type="number" id="input2">
+    <button type="button" onclick="add()">+</button>
+    <button type="button" onclick="fun()">-</button>
+    <!-- <button type="button" onclick="add()">*</button>
+    <button type="button" onclick="add()">/</button>
+    <button type="button" onclick="add()">%</button> -->
+
+    <script>
+        function add(){
+            var a= Number(document.getElementById("input1").value);
+            var b= Number(document.getElementById("input2").value);
+            var c=a+b
+            document.getElementById("hlo").innerHTML=c
+        }
+        function fun(){
+            var a= Number(document.getElementById("input1").value);
+            var b= Number(document.getElementById("input2").value);
+            var d=a-b
+            document.getElementById("hlo").innerhtml=d
+
+        }
+    </script>
+
+    
+</body>
+</html>

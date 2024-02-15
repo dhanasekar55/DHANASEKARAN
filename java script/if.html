@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter your age : <input type="number" id="age">
+    <button type="button" onclick="fun()">add</button>
+    <script>
+    function fun(){
+    var age =Number(document.getElementById("age").value);
+    if(age<18){
+        console.log("you doesnt have right age to vote")
+    }
+    else if(age>18 && age<=50){
+        console.log("you are eligible to vote")
+    }
+    else{
+        console.log("you are not eligible to vote ")
+    }
+}
+    </script>
+</body>
+</html>

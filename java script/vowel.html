@@ -1,0 +1,37 @@
+<html>
+<body>
+
+<h2> switch</h2>
+
+<p id="demo"> </p>
+enter thr word ; <input type="text" placeholder="enter the word" id="input1">
+<button type="button" onclick="show()" >click</button>
+
+<script>
+function show(){
+let text=document.getElementById("input1").value;
+switch (text) {
+  case 'a':
+   end = "a is vowel";
+    break;
+  case 'e':
+    end= "e is vowel";
+    break;
+  case 'i':
+    end = "i is vowel";
+    break;
+  case 'o':
+    end = "o is vowel";
+    break;
+  case 'u':
+   end = "u is vowel";
+    break;
+  default:
+    end="no vowel word";
+}
+document.getElementById("demo").innerHTML = "this is " + end;
+}
+</script>
+
+</body>
+</html>

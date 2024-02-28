@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    number=<input type="text" id="input1">
+    <button type="button" onclick="hhh()">fact</button>
+    <script>
+        function hhh(){
+        var a = Number(document.getElementById("input1").value);
+
+        for (i = 2; i<a; i++){
+        if (a % i == 0) {
+            console.log(a + " is not prime");
+            break
+        }
+    
+        else{
+        console.log(a + " is prime");
+}
+        }
+        }
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <style>
+        li{ 
+            display: inline;
+            background-color: aquamarine;
+            text-decoration: none;
+            font-size: 25px;
+            padding: 6px;
+
+
+        }
+        .er:hover{
+            color: azure;
+            background-color: black;
+            padding: 6px;
+
+        }
+        nav{
+            background-color: bisque;
+            padding: 8px;
+            text-align: center;
+        }
+        .er{
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: blue;;">welcome</h1>
+    <div>
+        <nav>
+            <li><a href="" class="er">home</a></li>
+            <li><a href="" class="er">categories</a></li>
+            <li><a href="" class="er">notification</a></li>
+            <li><a href="" class="er">account</a></li>
+            <li><a href="" class="er">cart</a></li>
+
+        </nav>
+    </div>
+		<h4>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					{% for message in messages %}
+						{{ message }}
+					{% endfor %}
+				{% endif %}
+			{% endwith %}
+		</h4>
+        <p><a href="{{url_for('addproducts')}}">Add products</a></p>
+		<table>
+			<tr>
+				<th>products</th>
+				<th>prand</th>
+				<th>price</th>
+				<th>EDIT</th>
+				<th>DELETE</th>
+			</tr>
+			{% for data in datas %}
+				<tr>
+					<td>{{data.products}}</td>
+					<td>{{data.prand}}</td>
+					<td>{{data.price}}</td>
+					<td><a href="{{url_for('editUser',id=data.ID)}}">Edit</a></td>
+					<td><a onclick="return confirm('Are you sure to delete?');" href="{{url_for('deleteUser',id=data.ID)}}">Delete</a></td>
+                    <td><a href="order.html">order</a></td>
+				</tr>
+			{% endfor %}
+		</table>
+
+    
+    
+</body>
+</html>

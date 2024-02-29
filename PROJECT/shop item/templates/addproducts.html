@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Flask CRUD</title>
+		<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+	</head>
+	<body>
+	<h1>Add products</h1>
+		<form action='' method='post'>
+			<label>product Name:</label>
+			<input type="text" name="name" required>
+			<label>prand:</label>
+			<input type="text" name="prand" required>
+			<label>price:</label>
+			<input type="text" name="price" required>
+			<input type='submit' value='Save Details'>
+		</form>
+	</body>
+</html>

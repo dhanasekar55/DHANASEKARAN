@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="hh">hello...</h1>
+
+    enter the guessNumber : <input type="text" id="input1">
+    <button type="button" onclick="guessNumber()">guess</button>
+    <script>
+        function guessNumber() {
+
+            var number= Number(document.getElementById("input1").value)
+            let guess = Math.floor(Math.random() * 10) + 1;
+
+            document.getElementById("hh").innerHTML=guess;
+        
+
+
+            if(number !==guess) {
+            console.log("error")
+           }
+
+
+           else if(number == guess) {
+           console.log('correct');
+          }
+
+        }
+        guessNumber()
+    </script>
+    
+</body>
+</html>

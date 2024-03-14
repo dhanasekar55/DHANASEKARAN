@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Validation</title>
+<style>
+.error-message {
+  color: red;
+}
+</style>
+</head>
+<body>
+<form id="myForm" onsubmit="return validateForm()">
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" oninput="clearError(this.id)"><span id="name-error" class="error-message"></span><br>
+  <label for="email">Email:</label><br>
+  <input type="email" id="email" name="email" oninput="clearError(this.id)"><span id="email-error" class="error-message"></span><br>
+  <label for="phone">Phone:</label><br>
+  <input type="text" id="phone" name="phone" oninput="clearError(this.id)"><span id="phone-error" class="error-message"></span><br>
+  <label for="password">Password:</label><br>
+  <input type="password" id="password" name="password" oninput="clearError(this.id)"><span id="password-error" class="error-message"></span><br>
+  <input type="submit" value="Submit">
+</form>
+
+<script>
+function validateForm() {
+  var name = document.getElementById("name").value;
+  var email = document.getElementById("email").value;
+  var phone = document.getElementById("phone").value;
+  var password = document.getElementById("password").value;
+  var nameError = document.getElementById("name-error");
+  var emailError = document.getElementById("email-error");
+  var phoneError = document.getElementById("phone-error");
+  var passwordError = document.getElementById("password-error");
+
+  nameError.innerHTML = "";
+  emailError.innerHTML = "";
+  phoneError.innerHTML = "";
+  passwordError.innerHTML = "";
+
+  if (name.trim() == "") {
+    nameError.innerHTML = "Name must be filled out";
+    return false;
+  } else if (!isValidName(name)) {
+    nameError.innerHTML = "Name must contain only letters and spaces";
+    return false;
+  } else {
+    nameError.innerHTML = "";
+    document.getElementById("name").style.border = "2px solid green";
+  }
+  
+  if (email == "") {
+    emailError.innerHTML = "Email must be filled out";
+    return false;
+  } else if (!isValidEmail(email)) {
+    emailError.innerHTML = "Invalid email format";
+    return false;
+  } else {
+    emailError.innerHTML = "";
+    document.getElementById("email").style.border = "2px solid green";
+  }
+  
+  if (phone == "") {
+    phoneError.innerHTML = "Phone must be filled out";
+    return false;
+  } else if (!isValidPhone(phone)) {
+    phoneError.innerHTML = "Phone number must contain only digits";
+    return false;
+  } else {
+    phoneError.innerHTML = "";
+    document.getElementById("phone").style.border = "2px solid green";
+  }
+  
+  if (password == "") {
+    passwordError.innerHTML = "Password must be filled out";
+    return false;
+  } else if (password.length < 6) {
+    passwordError.innerHTML = "Password must be at least 6 characters long";
+    return false;
+  } else {
+    passwordError.innerHTML = "";
+    document.getElementById("password").style.border = "2px solid green";
+  }
+  
+  return true;
+}
+
+function isValidName(name) {
+  // Regular expression for name validation (allows only letters and spaces)
+  var nameRegex = /^[A-Za-z\s]+$/;
+  return nameRegex.test(name);
+}
+
+function isValidEmail(email) {
+  // Regular expression for email validation
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function isValidPhone(phone) {
+  // Regular expression for phone number validation (allows only digits)
+  var phoneRegex = /^\d+$/;
+  return phoneRegex.test(phone);
+}
+
+function clearError(id) {
+  document.getElementById(id).style.border = "";
+}
+</script>
+</body>
+</html>

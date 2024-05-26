@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .weather-info {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <form method="POST" action="/">
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+            <button type="submit">Get Weather</button>
+        </form>
+        <div class="weather-info">
+            {% if weather_data %}
+                <h2>Weather in {{ weather_data['name'] }}</h2>
+                <p>Temperature: {{ weather_data['main']['temp'] }} °C</p>
+                <p>Weather: {{ weather_data['weather'][0]['description'] }}</p>
+                <p>Humidity: {{ weather_data['main']['humidity'] }}%</p>
+                <p>Wind Speed: {{ weather_data['wind']['speed'] }} m/s</p>
+            {% else %}
+                {% if request.method == 'POST' %}
+                    <p>Could not retrieve weather data for the provided city.</p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
